@@ -45,7 +45,7 @@
 	    <a class="btn btn-large btn-info" href="/projects">Explore OSB</a>
 	    <a class="btn btn-large btn-success" href="/account/register">Sign up</a>
 	    <a class="btn btn-large btn-success" href="/login">Sign in</a>
-	    <a href="/docs#Getting_Started"><icon id="helpIcon" class="icon-question-sign blue-icon"/></a>
+	    <a href="/docs#Getting_Started"><i id="helpIcon" class="fas fa-question-circle blue-icon"></i></a>
 	</div>
     </div>
 <% else %>
@@ -98,9 +98,9 @@
 				<% end %>
 				<% if @events_by_day.empty? %>
 					<p class="lead">You have no activities yet! Why don't you start by creating a new project?</p>
-					<icon class="icon-coffee icon-xxxlarge"></icon>
-					<icon class="icon-lightbulb icon-xxxlarge"></icon>
-					<icon class="icon-beaker icon-xxxlarge"></icon>
+					<i class="fas fa-coffee fa-4x"></i>
+					<i class="fas fa-lightbulb fa-4x"></i>
+					<i class="fas fa-beaker fa-4x"></i>
 				<% end %>
 			</div>
 			
@@ -111,19 +111,19 @@
 							<tr>
 								<td><h4>Your projects</h4></td>
 								<td class="noborder pull-right">
-									<button type="button" class="btn btn-success" onclick="location.href='/projects/new';"><i class="icon-plus"></i> New project</button>
-									<a href="/docs#Creating_Your_Own_Project"><icon style="font-size: 20px;" class="icon-large icon-question-sign blue-icon"/></a>
+									<button type="button" class="btn btn-success" onclick="location.href='/projects/new';"><i class="fas fa-plus"></i> New project</button>
+									<a href="/docs#Creating_Your_Own_Project"><i class="fas fa-2x fa-question-circle blue-icon"></i></a>
 								</td> 	
 							</tr>
 						</thead>
 						<% if User.current.projects.any? || @projects.any? %>
 						    <%= call_hook(:view_welcome_index_left, :projects => @projects) %>
                                                     <% for project in @projects %>
-							<tr><td colspan="2"><icon class="icon-list-alt"></icon><%= link_to_project(project) %></td></tr>
+							<tr><td colspan="2"><i class="fas fa-list-alt"></i><%= link_to_project(project) %></td></tr>
 						    <% end %>
 						    <% unless User.current.projects.empty? %>
 							<% for project in User.current.projects %>
-							    <tr><td colspan="2"><icon class="icon-list-alt"></icon><%= link_to_project(project) %></td></tr>
+							    <tr><td colspan="2"><i class="fas fa-list-alt"></i><%= link_to_project(project) %></td></tr>
 							<% end %>
 						    <% end %>
 						<% end %>
@@ -140,7 +140,7 @@
 							<% for project in Project.all.order('created_on desc') %>
 								<%if(i<maxprjcount)%>
 									<% i=i+1 %>
-										<tr><td><icon class="icon-list-alt"></icon><%= link_to_project project %></td></tr> 
+										<tr><td><i class="fas fa-list-alt"></i><%= link_to_project project %></td></tr> 
 								<% else break;%>
 								<% end %>
 							<% end %>

@@ -20,9 +20,9 @@
 <%= link_to l(:label_wiki_page_new), new_project_wiki_page_path(@project), :remote => true, :class => 'btn btn-default icon icon-add' %>
 <% end %>
 <% if @editable %>
-<% if @content.current_version? %>
+    <% if @content.current_version? %>
   <%= link_to_if_authorized(l(:button_edit), {:action => 'edit', :id => @page.title}, :class => 'btn btn-default icon icon-edit', :accesskey => accesskey(:edit)) %>
-  <%= link_to_if_authorized(l(:button_lock), {:action => 'protect', :id => @page.title, :protected => 1}, :method => :post, :class => 'btn btn-default icon icon-lock') if !@page.protected? %>
+  <%= link_to_if_authorized(l(:button_lock), {:action => 'protect', :id => @page.title, :protected => 1}, :method => :post, :class => 'btn btn-default') if !@page.protected? %>
   <%= link_to_if_authorized(l(:button_unlock), {:action => 'protect', :id => @page.title, :protected => 0}, :method => :post, :class => 'btn btn-default icon icon-unlock') if @page.protected? %>
   <%= link_to_if_authorized(l(:button_rename), {:action => 'rename', :id => @page.title}, :class => 'btn btn-default icon icon-move') %>
   <%= link_to_if_authorized(l(:button_delete), {:action => 'destroy', :id => @page.title}, :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :class => 'btn btn-default icon icon-del') %>

@@ -16,9 +16,13 @@ $(document).ready(function () {
 	var scrollmem = $('body').scrollTop() || $('html').scrollTop();
 	$('html,body').scrollTop(scrollmem);
     });
-    // -- Bootstrap widget calls
-    $('.popoverlink').popover();
-    $('.tooltiplink').tooltip();
+    
+    // timeout so these are added after fontawesome js runs
+    // FIXME: figure out how to use the fontawesome i2svg callback
+    setTimeout(function() {
+        $('.popoverlink').popover();
+        $('.tooltiplink').tooltip();
+    }, 500);
 
     $('.wrapped-channelml .table-border-summary').addClass('table');
     // $(":submit").addClass('btn btn-success btn-large');
@@ -71,7 +75,7 @@ $(document).ready(function () {
     $("#project_overview_sections section").each(function () {
 	var id = $(this).attr("id");
 	var name = $(this).find(".page-header h2").html();
-	$("#project_overview_list").append("<li><a href='#" + id + "'><i class='icon-chevron-right'></i>" + name + "</a></li>");
+	$("#project_overview_list").append("<li><a href='#" + id + "'><i class='fas fa-chevron-right'></i>" + name + "</a></li>");
     });
 
     $('#project_overview_list li').click(function (e) {
@@ -169,19 +173,19 @@ function replaceIconWithFontAwesome() {
     $(".jstb_help").removeClass("jstb_help").prepend("<icon class='icon-question-sign'/>");
 
     // DT
-    $(".E_issue").prepend('<icon class="icon-edit"/>');
-    $(".E_issue-edit").prepend('<icon class="icon-edit"/>');
-    $(".E_issue-closed").prepend('<icon class="icon-edit"/>');
-    $(".E_issue-note").prepend('<icon class="icon-edit"/>');
-    $(".E_changeset").prepend('<icon class="icon-cog"/>');
-    $(".E_news").prepend('<icon class="icon-bullhorn"/>');
-    $(".E_message").prepend('<icon class="icon-comment"/>');
-    $(".E_reply").prepend('<icon class="icon-reply"/>');
-    $(".E_wiki-page").prepend('<icon class="icon-font"/>');
-    $(".E_attachment").prepend('<icon class="icon-paper-clip"/>');
-    $(".E_document").prepend('<icon class="icon-file-alt"/>');
-    $(".E_project").prepend('<icon class="icon-book"/>');
-    $(".E_time-entry").prepend('<icon class="icon-time"/>');
+    $(".E_issue").prepend('<i class="fas fa-3x fa-edit"/>');
+    $(".E_issue-edit").prepend('<i class="fas fa-3x fa-edit"/>');
+    $(".E_issue-closed").prepend('<i class="fas fa-3x fa-edit"/>');
+    $(".E_issue-note").prepend('<i class="fas fa-3x fa-edit"/>');
+    $(".E_changeset").prepend('<i class="fas fa-3x fa-cog"/>');
+    $(".E_news").prepend('<i class="fas fa-3x fa-bullhorn"/>');
+    $(".E_message").prepend('<i class="fas fa-3x fa-comment"/>');
+    $(".E_reply").prepend('<i class="fas fa-3x fa-reply"/>');
+    $(".E_wiki-page").prepend('<i class="fas fa-3x fa-font"/>');
+    $(".E_attachment").prepend('<i class="fas fa-3x fa-paper-clip"/>');
+    $(".E_document").prepend('<i class="fas fa-3x fa-file-alt"/>');
+    $(".E_project").prepend('<i class="fas fa-3x fa-book"/>');
+    $(".E_time-entry").prepend('<i class="fas fa-3x fa-time"/>');
 }
 
 function getParameterByName(name) {

@@ -1,3 +1,6 @@
+/*
+ *= require font-awesome
+ */
 html {
     height: 100%;
 }
@@ -1763,11 +1766,6 @@ hr.soften {
     color: #37abc8;
 }
 
-#activity icon {
-    font-size: 40px;
-    color: #bbb;
-}
-
 #activity {
     font-size: 14px;
 }
@@ -1816,8 +1814,8 @@ icon:hover {
     text-decoration: none;
 }
 
-td > icon {
-    padding-right: 0.5em;
+td > svg {
+    margin-right: 0.5em;
 }
 
 .icon-small {

@@ -34,8 +34,8 @@
     <span id="pname"><%= @project.name %></span>
     <% if isProjectOrShowcase(@project) %>
         <div class="btn-group-lg" role="group" id="showGroup">
-            <button id="showGeppettoBtn" class="btn btn-success" href=#><i class=icon-eye-open></i> Explore model</button>
-            <button id="showProjectBtn" class="btn showProject" href="#"><i class="icon-hand-left"></i> Return to project  </button>
+            <button id="showGeppettoBtn" class="btn btn-success" href=#><i class="fas fa-eye"></i> Explore model</button>
+            <button id="showProjectBtn" class="btn showProject" href="#"><i class="fas fa-hand-point-left"></i> Return to project  </button>
             <a href="<%= request.base_url.to_s + '/projects/' + @project.identifier %>/models" id="moreBtn" class="btn btn-default" data-toggle="collapse" data-target="#explorermenu" aria-expanded="false" aria-controls="collapseExample">More</span></a>
         </div>
     <% end %>
@@ -57,7 +57,7 @@
 	    </span>
 	<% end %>
 	<% if isBestPractice?(@project) %>
-            <a class="twitterbutton icon-twitter-sign tooltiplink clickable" data-toggle='tooltip' data-placement='right' title='Share this project on Twitter!' href="https://twitter.com/intent/tweet?text=Check out the <%= @project.name %> project on Open Source Brain! via @osbteam&tw_p=tweetbutton&url=<%= Rack::Utils.escape(url_for(:only_path => false)) %>" target="_blank"></a>
+            <a class="twitterbutton fas fa-twitter tooltiplink clickable" data-toggle='tooltip' data-placement='right' title='Share this project on Twitter!' href="https://twitter.com/intent/tweet?text=Check out the <%= @project.name %> project on Open Source Brain! via @osbteam&tw_p=tweetbutton&url=<%= Rack::Utils.escape(url_for(:only_path => false)) %>" target="_blank"></a>
         <% end %>
     </div>
     <% if isEndorsedOrBestPractice?(@project) %>

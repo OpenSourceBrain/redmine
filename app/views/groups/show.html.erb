@@ -41,7 +41,7 @@
 			    <% next if membership.new_record? %>
 			    <% next if addedProjects.include?(membership.project.id) %>
 			    <% addedProjects.push(membership.project.id) %>
-			    <tr><td colspan="2"><icon class=" icon-list-alt"></icon><%= link_to_project membership.project %></td></tr>
+			    <tr><td colspan="2"><i class="fas fa-list-alt"></i><%= link_to_project membership.project %></td></tr>
 		        <% end %>
 		    <% end %>
 	        <% else %>
@@ -54,7 +54,7 @@
 		    
 		    <% @group.memberships.each do |membership| %>
 		        <% next if membership.new_record? %>
-		        <tr><td colspan="2"><icon class=" icon-list-alt"></icon><%= link_to_project membership.project %></td></tr>
+		        <tr><td colspan="2"><i class="fas fa-list-alt"></i><%= link_to_project membership.project %></td></tr>
 		    <% end %>
 		    
 	        <% end %>

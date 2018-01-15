@@ -10,7 +10,7 @@
 	<div class="controls">
 	    <%= text_field_tag 'new_tag', '', :size => 40, :class =>'input-medium form-control', :id=>'new_tag' %>
 	</div>	
-	<a href="#" id="add_new_tag"><icon class="icon-plus-sign"/></a>
+	<a href="#" id="add_new_tag"><i class="fas fa-plus-circle"></i></a>
 	<% availableTags = getAvailableTags() %>
 	<% if availableTags != '' %>
 	    <%= javascript_tag 'var availableTags = ' + availableTags.to_s + '; $( "#new_tag" ).autocomplete({source: availableTags, minLength: 0});' %>

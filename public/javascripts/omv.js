@@ -40,7 +40,7 @@ function addExpectedFields(expectedFieldName)
 	}
 	
 	if (tdContent != ''){
-		tdContent += '<a href="#" id="addExpectedOutputLink"><icon class="icon-plus-sign"></icon></a>';
+		tdContent += '<a href="#" id="addExpectedOutputLink"><i class="fas fa-plus"></i></a>';
 	}
 	
 	td.html(tdContent);

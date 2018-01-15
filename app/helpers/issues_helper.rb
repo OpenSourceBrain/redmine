@@ -165,7 +165,7 @@ module IssuesHelper
       :parent_issue_id => issue
     }
     attrs[:tracker_id] = issue.tracker unless issue.tracker.disabled_core_fields.include?('parent_issue_id')
-    link_to(" "+l(:button_add), new_project_issue_path(issue.project, :issue => attrs),{:class=>"btn pull-right icon-plus-sign"})
+    link_to(" "+l(:button_add), new_project_issue_path(issue.project, :issue => attrs),{:class=>"btn pull-right fas fa-plus"})
   end
 
   def trackers_options_for_select(issue)
@@ -456,7 +456,7 @@ module IssuesHelper
           value += link_to(l(:button_view),
                            { :controller => 'attachments', :action => 'show',
                              :id => atta, :filename => atta.filename },
-                           :class => 'icon-only icon-magnifier',
+                           :class => 'fas fa-only fa-magnifier',
                            :title => l(:button_view))
         end
       else

@@ -33,6 +33,7 @@ module ApplicationHelper
   include Redmine::Themes::Helper
   include Redmine::Hook::Helper
   include Redmine::Helpers::URL
+  include FontAwesome::Rails::IconHelper
 
   extend Forwardable
   def_delegators :wiki_helper, :wikitoolbar_for, :heads_for_wiki_formatter
@@ -213,7 +214,7 @@ module ApplicationHelper
       outputLink << getBaseBadge("#{tooltipLabel}. Click here to see other models with same tag.", create_link_to_search_by_custom_field(fieldId, fieldValueItem, label, '~'), "right", "badge-info")
       if allowEditing
         #TODO: Substitute space in fieldValueItem with underscore
-        deleteBadgeIcon='<a href="#" id="' + fieldValueItem + '" class="delete-tag"><icon class="icon-minus-sign"/></a>'
+        deleteBadgeIcon='<a href="#" id="' + fieldValueItem + '" class="delete-tag"><i class="fas fa-minus"></i></a>'
         outputLink << deleteBadgeIcon
       end  
     end
@@ -751,7 +752,7 @@ module ApplicationHelper
     onclick = "$('##{id}').toggle(); "
     onclick << (options[:focus] ? "$('##{options[:focus]}').focus(); " : "this.blur(); ")
     onclick << "return false;"
-    link_to(" "+name, "#", {:onclick => onclick, :class=>"btn pull-right icon-plus-sign"})
+    link_to(" "+name, "#", {:onclick => onclick, :class=>"btn pull-right fas fa-plus"})
   end
 
   def format_activity_title(text)

@@ -82,7 +82,7 @@
 
                 <ul>
 	            <% for membership in @memberships %>
-	                <tr><td colspan="2"><icon class="icon-list-alt"></icon><%= link_to_project(membership.project) %>
+	                <tr><td colspan="2"><i class="far fa-list-alt"></i><%= link_to_project(membership.project) %>
 	                    <br/><span class="smallText"><%=h membership.roles.sort.collect(&:to_s).join(', ') %>, <%= format_date(membership.created_on) %></span></td></tr>
 	            <% end %>
                 </ul>

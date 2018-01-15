@@ -19,7 +19,7 @@
 	</div>
 	<% for p in @modelProjects %>
 		<div class="tab-pane" id="cell<%= p.id %>"">
-			<a class="btn btn-large btn-info pull-right" href="<%= url_for({:controller => 'projects', :action => 'show', :id => p}) %>"><icon class="icon-folder-open"></icon> Open project</a>
+			<a class="btn btn-large btn-info pull-right" href="<%= url_for({:controller => 'projects', :action => 'show', :id => p}) %>"><i class="fas fa-folder-open"></i> Open project</a>
 			<br/><br/>
 			<%= textilizable(p.short_description, :project => p) %>
 		</div>
