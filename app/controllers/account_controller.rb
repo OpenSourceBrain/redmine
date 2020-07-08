@@ -91,8 +91,10 @@ class AccountController < ApplicationController
           geppettoRegisterURL = Rails.application.config.serversIP["geppettoIP"] + Rails.application.config.serversIP["geppettoContextPath"] + "setPassword?username=" + @user.login + "&oldPassword=" + oldPassword + "&newPassword=" + @user.hashed_password
           begin
             geppettoRegisterContent = open(geppettoRegisterURL)
-          rescue => e
-            print "Error requesting url: #{geppettoRegisterURL}"
+          rescue OpenURI::HTTPError => e
+            print "Error requesting url: #{geppettoRegisterURL}\n"
+            resp = e.io
+            print "Server response: " + resp.status + ": " + resp.string + "\n"
           else
             geppettoRegisterContent = JSON.parse(geppettoRegisterContent.read)
             #TODO verified content
@@ -194,8 +196,10 @@ class AccountController < ApplicationController
     geppettoRegisterURL = Rails.application.config.serversIP["geppettoIP"] + Rails.application.config.serversIP["geppettoContextPath"] + "user?username=" + user.login + "&password=" + user.hashed_password
     begin
       geppettoRegisterContent = open(geppettoRegisterURL)
-    rescue => e
-      print "Error requesting url: #{geppettoRegisterURL}"
+    rescue OpenURI::HTTPError => e
+      print "Error requesting url: #{geppettoRegisterURL}\n"
+      resp = e.io
+      print "Server response: " + resp.status + ": " + resp.string + "\n"
     else
       geppettoRegisterContent = JSON.parse(geppettoRegisterContent.read)
     end
